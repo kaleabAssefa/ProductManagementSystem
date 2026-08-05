@@ -1,33 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c86ac58-7018-4719-8d2e-2698ebde6807" name="Changes" comment="" />
+    <list default="true" id="7c86ac58-7018-4719-8d2e-2698ebde6807" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/app/ProductManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/app/ProductManagementSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/productmanagement/model/Production.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/productmanagement/model/Production.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3HCGDOSX1uHowYEgtPSNc6cucyr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/Users/kaleabassefa/Desktop/TAKEO_ALL_ASSIGNMENT_FOLDER/JAVA/ProductManagementSystem/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ProductManagementSystem.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;productMng&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/kaleabassefa/Desktop/TAKEO_ALL_ASSIGNMENT_FOLDER/JAVA/ProductManagementSystem/src/Main.java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-96c0d24d" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

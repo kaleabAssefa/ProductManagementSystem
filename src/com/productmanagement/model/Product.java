@@ -1,19 +1,21 @@
-public class Product{
+package com.productmanagement.model;
+public class Product {
+
     private int productId;
     private String productName;
     private String category;
     private double price;
     private String description;
 
-    public Product(int productId, String productName,String category,double price,String description){
-        this.productId= productId;
-        this.productName=productName;
+    public Product(int productId, String productName, String category,
+                   double price, String description) {
+        this.productId = productId;
+        this.productName = productName;
         this.category = category;
         this.price = price;
-        this.description=description;
+        this.description = description;
     }
-    //Setter and getters
-    public int getProductId(){
+    public int getProductId() {
         return productId;
     }
 
@@ -21,25 +23,43 @@ public class Product{
         this.productId = productId;
     }
 
-    public String getProductName(){
+    public String getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName){
+    public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public String getCategory(){
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(String Category){
+    public void setCategory(String category) {
         this.category = category;
     }
 
+    public double getPrice() {
+        return price;
+    }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
+    public String getDescription() {
+        return description;
+    }
 
-
-
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public void displayProduct() {
+        System.out.println("---------------------------------------------------");
+        System.out.println("Product ID   : " + productId);
+        System.out.println("Name         : " + productName);
+        System.out.println("Category     : " + category);
+        System.out.println("Price        : Rs. " + price);
+        System.out.println("Description  : " + description);
+    }
 }
