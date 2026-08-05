@@ -8,54 +8,21 @@ import com.productmanagement.model.Customer;
 import java.util.Scanner;
 
 import java.util.ArrayList;
-
-
-/**
- * ProductManagementSystem.java
- * -----------------------------
- * This is the MAIN class - the entry point of the application
- * (it contains the "public static void main" method).
- *
- * WHAT THIS CLASS DOES:
- * 1. Holds ArrayLists that store all our data in memory
- *    (Products, Production records, Orders, Payments, Customers).
- * 2. Shows a text menu to the user using a "while" loop that keeps
- *    running until the user chooses "Exit".
- * 3. Based on the user's choice, a "switch" statement decides which
- *    sub-menu / operation to run.
- * 4. Each module (Product / Production / Order / Payment) has its own
- *    ADD / VIEW / UPDATE / DELETE methods that operate on the ArrayLists.
- *
- * WHY ArrayList?
- * ArrayList is a resizable array from Java's Collections Framework.
- * Unlike a normal array (int[] arr = new int[5]), an ArrayList can grow
- * or shrink automatically as we add or remove items - perfect for
- * managing an unknown number of products/orders/payments.
- */
 public class ProductManagementSystem {
 
-    // ---------- Data storage (ArrayLists) ----------
     private static ArrayList<Product> productList = new ArrayList<>();
     private static ArrayList<Production> productionList = new ArrayList<>();
     private static ArrayList<Order> orderList = new ArrayList<>();
     private static ArrayList<Payment> paymentList = new ArrayList<>();
     private static ArrayList<Customer> customerList = new ArrayList<>();
 
-    // A single Scanner shared by the whole program to read user input
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
-        // Load a few sample records so the menus have something to show
-        // the first time you run the program. This is optional -
-        // feel free to delete this call once you understand the code.
         loadSampleData();
 
         int mainChoice;
 
-        // MAIN MENU LOOP
-        // "do-while" runs the menu at least once, and keeps repeating
-        // until the user enters 0 (Exit).
         do {
             System.out.println("\n=====================================");
             System.out.println("   PRODUCT MANAGEMENT SYSTEM - MENU  ");
@@ -70,7 +37,6 @@ public class ProductManagementSystem {
 
             mainChoice = readInt();
 
-            // switch-case controls which module menu opens
             switch (mainChoice) {
                 case 1:
                     productMenu();
@@ -99,9 +65,6 @@ public class ProductManagementSystem {
         sc.close();
     }
 
-    // =====================================================================
-    //  PRODUCT MODULE
-    // =====================================================================
     private static void productMenu() {
         int choice;
         do {
@@ -138,7 +101,7 @@ public class ProductManagementSystem {
         String description = sc.nextLine();
 
         Product p = new Product(id, name, category, price, description);
-        productList.add(p); // ArrayList.add() -> stores the new object
+        productList.add(p);
         System.out.println("Product added successfully!");
     }
 
@@ -147,7 +110,6 @@ public class ProductManagementSystem {
             System.out.println("No products found.");
             return;
         }
-        // "for-each" loop: goes through every element in the ArrayList
         for (Product p : productList) {
             p.displayProduct();
         }
@@ -156,9 +118,6 @@ public class ProductManagementSystem {
     private static void updateProduct() {
         System.out.print("Enter Product ID to update: ");
         int id = readInt();
-        // POLYMORPHISM (method overloading) - here we call the version
-        // of findProduct that accepts an int id. See the overloaded
-        // methods further below.
         Product p = findProduct(id);
 
         if (p == null) {
@@ -191,12 +150,6 @@ public class ProductManagementSystem {
         System.out.println("Product deleted successfully!");
     }
 
-    /**
-     * POLYMORPHISM EXAMPLE - METHOD OVERLOADING
-     * Two methods with the SAME NAME (findProduct) but DIFFERENT
-     * parameter types/lists. Java decides which one to run based on
-     * what you pass in. This is called "compile-time polymorphism".
-     */
     private static Product findProduct(int productId) {
         for (Product p : productList) {
             if (p.getProductId() == productId) {
@@ -215,9 +168,6 @@ public class ProductManagementSystem {
         return null;
     }
 
-    // =====================================================================
-    //  PRODUCTION MODULE
-    // =====================================================================
     private static void productionMenu() {
         int choice;
         do {
@@ -246,8 +196,6 @@ public class ProductManagementSystem {
         int id = readInt();
         System.out.print("Enter Product ID this production belongs to: ");
         int productId = readInt();
-
-        // Basic validation: make sure the product actually exists first
         if (findProduct(productId) == null) {
             System.out.println("No such Product ID exists. Add the product first.");
             return;
@@ -309,9 +257,6 @@ public class ProductManagementSystem {
         return null;
     }
 
-    // =====================================================================
-    //  ORDER MODULE
-    // =====================================================================
     private static void orderMenu() {
         int choice;
         do {
@@ -355,7 +300,6 @@ public class ProductManagementSystem {
         String date = sc.nextLine();
 
         Order order = new Order(id, custId, productId, qty, date, "Placed");
-        // Business logic: calculate total using the product's price
         order.calculateTotalAmount(p.getPrice());
 
         orderList.add(order);
@@ -408,9 +352,6 @@ public class ProductManagementSystem {
         return null;
     }
 
-    // =====================================================================
-    //  PAYMENT MODULE
-    // =====================================================================
     private static void paymentMenu() {
         int choice;
         do {
@@ -451,7 +392,6 @@ public class ProductManagementSystem {
         System.out.print("Enter Payment Status (Paid/Pending/Failed): ");
         String status = sc.nextLine();
 
-        // We use the order's total amount as the amount paid
         Payment payment = new Payment(id, orderId, order.getTotalAmount(), method, status);
         paymentList.add(payment);
         System.out.println("Payment record added successfully!");
@@ -503,9 +443,6 @@ public class ProductManagementSystem {
         return null;
     }
 
-    // =====================================================================
-    //  CUSTOMER MODULE (demonstrates Inheritance / Polymorphism usage)
-    // =====================================================================
     private static void customerMenu() {
         int choice;
         do {
@@ -543,24 +480,11 @@ public class ProductManagementSystem {
             System.out.println("No customers found.");
             return;
         }
-        // Because Customer extends Person, we could also store these in an
-        // ArrayList<Person> and call displayDetails() polymorphically.
-        // Here we loop through Customers directly for simplicity.
         for (Customer customer : customerList) {
             customer.displayDetails(); // calls Customer's overridden version
         }
     }
 
-    // =====================================================================
-    //  HELPER METHODS (input handling)
-    // =====================================================================
-
-    /**
-     * Safely reads an integer from the user.
-     * We wrap Scanner's nextInt() in a try-catch because if the user types
-     * text instead of a number, nextInt() would normally crash the program
-     * with an exception. Here we catch that and ask again.
-     */
     private static int readInt() {
         while (true) {
             try {
@@ -582,10 +506,7 @@ public class ProductManagementSystem {
         }
     }
 
-    /**
-     * Adds a few starter records so you can immediately try
-     * "View All..." options without manually typing data first.
-     */
+
     private static void loadSampleData() {
         productList.add(new Product(101, "Laptop", "Electronics", 55000.0, "15-inch business laptop"));
         productList.add(new Product(102, "Office Chair", "Furniture", 4500.0, "Ergonomic mesh chair"));

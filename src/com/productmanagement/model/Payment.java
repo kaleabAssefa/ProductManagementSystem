@@ -1,17 +1,11 @@
 package com.productmanagement.model;
-
-/**
- * Payment.java
- * ------------
- * Represents payment details linked to an order.
- */
 public class Payment {
 
     private int paymentId;
-    private int orderId;       // links to an Order
+    private int orderId;
     private double amountPaid;
-    private String paymentMethod; // e.g. "Cash", "Card", "UPI"
-    private String paymentStatus; // e.g. "Paid", "Pending", "Failed"
+    private String paymentMethod;
+    private String paymentStatus;
 
     public Payment(int paymentId, int orderId, double amountPaid,
                    String paymentMethod, String paymentStatus) {
@@ -21,8 +15,6 @@ public class Payment {
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
     }
-
-    // ---------- Getters and Setters ----------
     public int getPaymentId() {
         return paymentId;
     }

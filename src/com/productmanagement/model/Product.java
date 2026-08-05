@@ -1,14 +1,6 @@
 package com.productmanagement.model;
-/**
- * Product.java
- * ------------
- * Represents one product in the system.
- * This is a plain class (not abstract) because we DO want to create
- * real Product objects like: new Product(101, "Laptop", ...)
- */
 public class Product {
 
-    // ENCAPSULATION: all fields are private
     private int productId;
     private String productName;
     private String category;
@@ -23,8 +15,6 @@ public class Product {
         this.price = price;
         this.description = description;
     }
-
-    // ---------- Getters and Setters ----------
     public int getProductId() {
         return productId;
     }
@@ -64,8 +54,6 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    // A simple method to neatly print product details.
     public void displayProduct() {
         System.out.println("---------------------------------------------------");
         System.out.println("Product ID   : " + productId);

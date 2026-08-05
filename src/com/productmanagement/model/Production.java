@@ -1,17 +1,11 @@
 package com.productmanagement.model;
 
-/**
- * Production.java
- * ---------------
- * Represents production details for a product:
- * how many units were produced and the current production status.
- */
 public class Production {
 
     private int productionId;
-    private int productId;          // links this record to a Product
+    private int productId;
     private int quantityProduced;
-    private String productionStatus; // e.g. "In Progress", "Completed", "On Hold"
+    private String productionStatus;
 
     public Production(int productionId, int productId, int quantityProduced,
                       String productionStatus) {
@@ -20,8 +14,6 @@ public class Production {
         this.quantityProduced = quantityProduced;
         this.productionStatus = productionStatus;
     }
-
-    // ---------- Getters and Setters ----------
     public int getProductionId() {
         return productionId;
     }

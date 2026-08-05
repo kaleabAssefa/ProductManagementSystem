@@ -1,10 +1,5 @@
 package com.productmanagement.model;
 
-/**
- * Order.java
- * ----------
- * Represents a customer order for a product.
- */
 public class Order {
 
     private int orderId;
@@ -25,8 +20,6 @@ public class Order {
         this.orderStatus = orderStatus;
         this.totalAmount = 0.0; // calculated later using calculateTotalAmount()
     }
-
-    // ---------- Getters and Setters ----------
     public int getOrderId() {
         return orderId;
     }
@@ -78,13 +71,6 @@ public class Order {
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
-
-    /**
-     * Business logic method: calculates the order's total amount
-     * based on the product's price and the quantity ordered.
-     * This method is called from the main system after looking up the
-     * product price.
-     */
     public void calculateTotalAmount(double unitPrice) {
         this.totalAmount = unitPrice * this.quantity;
     }
