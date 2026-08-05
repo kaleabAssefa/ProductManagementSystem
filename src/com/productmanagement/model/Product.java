@@ -1,65 +1,45 @@
-package com.productmanagement.model;
-
-public class Product extends BaseRecord {
-
+public class Product{
+    private int productId;
     private String productName;
     private String category;
     private double price;
-    private int availableQuantity;
+    private String description;
 
-    public Product(
-            int productId,
-            String productName,
-            String category,
-            double price,
-            int availableQuantity
-    ) {
-        super(productId);
-        this.productName = productName;
+    public Product(int productId, String productName,String category,double price,String description){
+        this.productId= productId;
+        this.productName=productName;
         this.category = category;
         this.price = price;
-        this.availableQuantity = availableQuantity;
+        this.description=description;
+    }
+    //Setter and getters
+    public int getProductId(){
+        return productId;
     }
 
-    public String getProductName() {
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName(){
         return productName;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getAvailableQuantity() {
-        return availableQuantity;
-    }
-
-    public void setProductName(String productName) {
+    public void setProductName(String productName){
         this.productName = productName;
     }
 
-    public void setCategory(String category) {
+    public String getCategory(){
+        return category;
+    }
+
+    public void setCategory(String Category){
         this.category = category;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
-    public void setAvailableQuantity(int availableQuantity) {
-        this.availableQuantity = availableQuantity;
-    }
 
-    @Override
-    public void displayDetails() {
-        System.out.println("----------------------------------");
-        System.out.println("Product ID: " + getId());
-        System.out.println("Product Name: " + productName);
-        System.out.println("Category: " + category);
-        System.out.printf("Price: $%.2f%n", price);
-        System.out.println("Available Quantity: " + availableQuantity);
-    }
+
+
+
 }
